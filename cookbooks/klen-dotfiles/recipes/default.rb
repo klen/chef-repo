@@ -27,3 +27,9 @@ execute "git clone #{node[:dotfiles][:vimsource]}" do
     group "#{node[:dotfiles][:user]}"
     not_if { File.directory?("#{node[:dotfiles][:home]}/.vim") }
 end
+
+cookbook_file "#{node[:dotfiles][:home]}/.vimrc" do
+    source ".vimrc"
+    owner "#{node[:dotfiles][:user]}"
+    group "#{node[:dotfiles][:user]}"
+end
