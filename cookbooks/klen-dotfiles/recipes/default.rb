@@ -6,15 +6,15 @@
 
 package "git"
 
-execute "git clone git://github.com/klen/.home.git" do
-    cwd "/home/klen"
-    user "klen"
-    group "klen"
-    not_if { File.directory?("/home/klen/.home") }
+execute "git clone #{node[:dotfiles][:source]} #{node[:dotfiles][:target]}" do
+    cwd "#{node[:dotfiles][:home]}"
+    user "#{node[:dotfiles][:user]}"
+    group "#{node[:dotfiles][:user]}"
+    not_if { File.directory?("#{node[:dotfiles][:target]}") }
 end
 
-execute "make install" do
-    cwd "/home/klen/.home"
-    user "klen"
-    group "klen"
+link "#{node[:dotfiles][:home]}/.bashrc" do
+    to "#{node[:dotfiles][:target]}/.bashrc"
+    owner "#{node[:dotfiles][:user]}"
+    group "#{node[:dotfiles][:user]}"
 end

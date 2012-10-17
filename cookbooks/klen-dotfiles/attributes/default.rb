@@ -1,0 +1,5 @@
+default[:dotfiles][:user] = "klen"
+default[:dotfiles][:group] = "#{node[:dotfiles][:user]}"
+default[:dotfiles][:home] = "/home/#{node[:dotfiles][:user]}"
+default[:dotfiles][:source] = "git://github.com/klen/.home.git"
+default[:dotfiles][:target] = "#{node[:dotfiles][:user]}/.home"
