@@ -18,3 +18,15 @@ link "#{node[:dotfiles][:home]}/.bashrc" do
     owner "#{node[:dotfiles][:user]}"
     group "#{node[:dotfiles][:user]}"
 end
+
+link "#{node[:dotfiles][:home]}/.bash_aliases" do
+    to "#{node[:dotfiles][:target]}/.bash_aliases"
+    owner "#{node[:dotfiles][:user]}"
+    group "#{node[:dotfiles][:user]}"
+end
+
+link "#{node[:dotfiles][:home]}/.bash_profile" do
+    to "#{node[:dotfiles][:target]}/.bash_profile"
+    owner "#{node[:dotfiles][:user]}"
+    group "#{node[:dotfiles][:user]}"
+end
