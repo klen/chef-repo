@@ -11,3 +11,9 @@ execute "git clone git://github.com/klen/.home.git" do
     user "klen"
     group "klen"
 end
+
+execute "make install" do
+    cwd "/home/klen/.home"
+    user "klen"
+    group "klen"
+end
