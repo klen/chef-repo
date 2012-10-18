@@ -1,0 +1,6 @@
+[submodule "cookbooks/nodejs"]
+	path = cookbooks/nodejs
+	url = git://github.com/hectcastro/chef-nodejs.git
+[submodule "cookbooks/curl"]
+	path = cookbooks/curl
+	url = git://github.com/phlipper/chef-curl.git
