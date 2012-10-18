@@ -7,6 +7,7 @@ run_list(
   "recipe[git]",
   "recipe[build-essential]",
   "recipe[logrotate]",
+  "recipe[locale-gen]",
   "recipe[python]",
   "recipe[curl]",
   "recipe[nodejs]",
