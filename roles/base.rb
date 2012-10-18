@@ -6,8 +6,10 @@ run_list(
   "recipe[apt]",
   "recipe[git]",
   "recipe[build-essential]",
-  "recipe[python]",
   "recipe[logrotate]",
+  "recipe[python]",
+  "recipe[curl]",
+  "recipe[nodejs]",
   "recipe[vim]"
 ) 
 override_attributes(
