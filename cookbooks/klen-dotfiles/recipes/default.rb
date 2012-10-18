@@ -21,7 +21,7 @@ end
     end
 end
 
-execute "git clone #{node[:dotfiles][:vimsource]}" do
+execute "git clone --recursive #{node[:dotfiles][:vimsource]}" do
     cwd "#{node[:dotfiles][:home]}"
     user "#{node[:dotfiles][:user]}"
     group "#{node[:dotfiles][:user]}"
